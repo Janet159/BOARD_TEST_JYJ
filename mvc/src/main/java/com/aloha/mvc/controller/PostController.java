@@ -95,9 +95,9 @@ public class PostController {
      * 게시글 등록 화면
      * @return
      */
-    @GetMapping("/create")
+    @GetMapping("/insert")
     public String create(@ModelAttribute(value = "post") Posts post) {
-        return "posts/create";
+        return "posts/insert";
     }
 
     /**
@@ -116,7 +116,7 @@ public class PostController {
         if( result ) 
             return "redirect:/posts/list";
         // ❌ 데이터 처리 실패
-        return "redirect:/posts/create?error=true";
+        return "redirect:/posts/insert?error=true";
     }
     
     /**
